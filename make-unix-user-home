@@ -1,0 +1,66 @@
+# Makefile to set up a new Unix user home account as we wish.
+#
+# When we start working with a new client a.k.a. customer,
+# then we create a Unix account spefically for that client,
+# in order to provide a account-level security settings.
+
+all: ssh vim config bin doc git key org apps services
+
+ssh:
+	@echo "Make '~/.ssh' directories for secure shell"
+	mkdir -p ~/.ssh/{config.d,identity.d}
+
+vim:
+	@echo "Make '~/.vim' directories for vim editor and its plugins"
+	mkdir -p ~/.vim/pack/vendor/{start,opt}
+
+config:
+	@echo "Make '~/.config' directory for many configuration subdirectories"
+	mkdir -p ~/.config/{env,git,tmux}
+
+bin:
+	@echo "Make '~/bin' directory for binaries such as programs"
+	mkdir -p ~/bin
+
+doc:
+	@echo "Make '~/doc' directory for documentation such as help"
+	mkdir -p ~/doc
+
+git:
+	@echo "Make '~/git' directory for repositories"
+	mkdir -p ~/git
+
+key:
+	@echo "Make '~/key' directory for credentials"
+	mkdir -p ~/key
+
+org:
+	@echo "Make '~/org' directory for organization files"
+	mkdir -p ~/org
+
+tmp:
+	@echo "Make '~/tmp' directory for temporary files"
+	mkdir -p ~/tmp
+
+apps:
+	echo "Apps you may want to launch:"
+	echo "Chrome"
+	echo "Firefox"
+	echo "Safari"
+	echo "Terminal"
+	echo "Zoom"
+	echo
+
+services:
+	echo "Services that you may want to set up:"
+	echo "https://aws.amazon.com"
+	echo "https://fastmail.com"
+	echo "https://gitlab.com"
+	echo "https://github.com"
+	echo "https://gmail.com"
+	echo "https://linkedin.com"
+	echo "https://slack.com"
+	echo "https://tailwindui.com"
+	echo "https://trello.com"
+	echo "https://zoom.us"
+	echo
